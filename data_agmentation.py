@@ -11,7 +11,7 @@ def salvarImagem(imagem, transform, title, nomefig, diretorioSalvar):
     ax[0].imshow(imagem)
 
     imagem = transform(imagem)
-    ax[1].set_title(f'Image Original')
+    ax[1].set_title(title)
     ax[1].imshow(imagem)
     plt.savefig(diretorioSalvar + title + nomefig)
 
@@ -33,7 +33,7 @@ randomRotation = transforms.RandomRotation(45)
 salvarImagem(imagem, randomRotation, 'Rotation', nome, diretorioSalvar)
 
 nome = 'dog.jpeg'
-imagem = 'C:/Projetos/ampliacao-dataset/imagens/originais/' + nome
+imagem =  diretorio + '/imagens/originais/' + nome
 randomAffine = transforms.RandomAffine(degrees=(0, 0),translate=(0.2, 0.5))
 salvarImagem(imagem, randomAffine, 'Translate', nome, diretorioSalvar)
 
